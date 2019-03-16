@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta http-equiv="content-Type" content="text/html" charset="UTF-8"/>
+    <!--th:href is used for thymeleaf href and as some browsers dont support it, so, we use href
+     ../../static/css/style.css means the two dots says that style.css is two levels above the
+     present header.html. one level is templates and the other is static and in static/css/style.css-->
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="../../static/css/style.css"/>
+    <!-- <link th:href="@{/webjar/bootstap/4.3.1/css/bootstrap.min.css}"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+          crossorigin="anonymous"
+          rel="stylesheet" media="screen" /> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div th:fragment="header">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
+                        <ul class="nav navbar-nav">
+                            <li><a th:href="@{/products}">Products</a></li>
+                            <li><a th:href="@{/products/add}">Create Product</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="jumbotron">
+                <div class="row text-center">
+                    <div class="row">
+                        <h2>Spring MVC Applictaion</h2>
+                    </div>
+                </div>
+                <div class="row text-center" width="30%">
+                    <img align="center" src="../../static/images/spring.png" width="50%"
+                         th:src="@{/images/spring.png}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
